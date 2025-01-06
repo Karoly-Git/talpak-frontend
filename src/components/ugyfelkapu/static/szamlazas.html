@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Számlázás</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* styles.css */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    .dashboard-container {
+      display: flex;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1f2937;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .brand {
+      font-size: 22px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      color: #3b82f6;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .sidebar nav ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: #9ca3af;
+      font-size: 18px;
+    }
+
+    .sidebar nav ul li a:hover {
+      color: #3b82f6;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    .logout-btn {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #dc2626;
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin: 0 auto 15px;
+      width: 80%;
+    }
+
+    .form-group label {
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #4b5563;
+      width: 25%;
+      text-align: right;
+      padding-right: 2rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+      width: 50%;
+    }
+
+    .form-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .save-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 1rem auto;
+    }
+
+    .save-btn:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2 class="brand">Üdvözöljük Károly!</h2>
+      <h3>Profil</h3>
+      <nav>
+        <ul>
+          <li><a href="https://karolyhornyak.co.uk/talpak/felhasznaloi-adatok.html">Felhasználói adatok</a></li>
+          <li><a href="https://karolyhornyak.co.uk/talpak/beallitasok.html">Beállítások</a></li>
+        </ul>
+      </nav>
+
+      <h3>Számlázás</h3>
+      <nav>
+        <ul>
+          <li><a href="https://karolyhornyak.co.uk/talpak/szamlazas.html">Számlázási adatok</a></li>
+        </ul>
+      </nav>
+
+      <h3>Űrlapok</h3>
+      <nav>
+        <ul>
+          <li><a href="https://karolyhornyak.co.uk/talpak/urlap-1.html">Űrlap-1</a></li>
+          <li><a href="https://karolyhornyak.co.uk/talpak/urlap-2.html">Űrlap-2</a></li>
+        </ul>
+      </nav>
+
+      <h3>Kapcsolat</h3>
+      <nav>
+        <ul>
+          <li><a href="https://karolyhornyak.co.uk/talpak/uzenetek.html">Üzenetek</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h1>Számlázás</h1>
+        <a style="text-decoration: none;" href="https://karolyhornyak.co.uk/talpak/belepes.html"
+          class="logout-btn">Kijelentkezés</a>
+      </header>
+
+      <section class="card">
+        <h2>Számlázási adatok módosítása</h2>
+        <div class="form-group">
+          <label>Számlázási név</label>
+          <span>FKF Zrt.</span>
+        </div>
+        <div class="form-group">
+          <label>Számlázási cím</label>
+          <span>1068 Budapest, Rippl-Rónai utca 34-36.</span>
+        </div>
+        <div class="form-group">
+          <label>Új számlázási név *</label>
+          <input type="text" />
+        </div>
+        <div class="form-group">
+          <label>Új számlázási cím *</label>
+          <input type="text" />
+        </div>
+        <div class="form-group">
+          <button class="save-btn">Mentés</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

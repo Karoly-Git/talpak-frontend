@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Űrlap-2</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Unified Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .brand {
+            font-size: 22px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            color: #3b82f6;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .sidebar nav ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: 18px;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .questionnaire {
+            background-color: #f9fafb;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .questionnaire h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .question label {
+            flex: 1;
+        }
+
+        .options {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .options label {
+            margin-right: 15px;
+        }
+
+        .save-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 1rem auto;
+        }
+
+        .save-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 class="brand">Üdvözöljük Károly!</h2>
+            <h3>Profil</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/felhasznaloi-adatok.html">Felhasználói adatok</a>
+                    </li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/beallitasok.html">Beállítások</a></li>
+                </ul>
+            </nav>
+
+            <h3>Számlázás</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/szamlazas.html">Számlázási adatok</a></li>
+                </ul>
+            </nav>
+
+            <h3>Űrlapok</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-1.html">Űrlap-1</a></li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-2.html">Űrlap-2</a></li>
+                </ul>
+            </nav>
+
+            <h3>Kapcsolat</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/uzenetek.html">Üzenetek</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Űrlap-2</h1>
+                <a style="text-decoration: none;" href="https://karolyhornyak.co.uk/talpak/belepes.html"
+                    class="logout-btn">Kijelentkezés</a>
+            </header>
+
+            <section class="card questionnaire">
+                <h2>Állapotfelmérő kérdőív</h2>
+                <form>
+                    <div class="question"><label>Terhesség:</label>
+                        <div class="options"><label><input type="radio" name="terhesseg" value="nem">
+                                Nem</label><label><input type="radio" name="terhesseg" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Trombózisra való hajlam:</label>
+                        <div class="options"><label><input type="radio" name="trombozis" value="nem">
+                                Nem</label><label><input type="radio" name="trombozis" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Kezeltetlen magas vérnyomás:</label>
+                        <div class="options"><label><input type="radio" name="vernyomas" value="nem">
+                                Nem</label><label><input type="radio" name="vernyomas" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Súlyos szív- és keringési probléma:</label>
+                        <div class="options"><label><input type="radio" name="sziv_problem" value="nem">
+                                Nem</label><label><input type="radio" name="sziv_problem" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Pacemaker:</label>
+                        <div class="options"><label><input type="radio" name="pacemaker" value="nem">
+                                Nem</label><label><input type="radio" name="pacemaker" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Cukorbetegség:</label>
+                        <div class="options"><label><input type="radio" name="cukorbetegseg" value="nem">
+                                Nem</label><label><input type="radio" name="cukorbetegseg" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Erősen visszeres, gyulladt, ödémás láb:</label>
+                        <div class="options"><label><input type="radio" name="visszeres_lab" value="nem">
+                                Nem</label><label><input type="radio" name="visszeres_lab" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Magas láz esetén:</label>
+                        <div class="options"><label><input type="radio" name="magas_laz" value="nem">
+                                Nem</label><label><input type="radio" name="magas_laz" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Fertőző betegség:</label>
+                        <div class="options"><label><input type="radio" name="fertozes" value="nem">
+                                Nem</label><label><input type="radio" name="fertozes" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Heveny ízületi vagy egyéb gyulladás:</label>
+                        <div class="options"><label><input type="radio" name="izuleti_gyulladas" value="nem">
+                                Nem</label><label><input type="radio" name="izuleti_gyulladas" value="igen">
+                                Igen</label></div>
+                    </div>
+                    <div class="question"><label>Gerincsérv (csak orvosi hozzájárulással):</label>
+                        <div class="options"><label><input type="radio" name="gerincserv" value="nem">
+                                Nem</label><label><input type="radio" name="gerincserv" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Közvetlenül műtét utáni állapot:</label>
+                        <div class="options"><label><input type="radio" name="mutet_utani" value="nem">
+                                Nem</label><label><input type="radio" name="mutet_utani" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Vérzékenység, vérhígító szedése:</label>
+                        <div class="options"><label><input type="radio" name="verzekenyseg" value="nem">
+                                Nem</label><label><input type="radio" name="verzekenyseg" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Előrehaladott csontritkulás:</label>
+                        <div class="options"><label><input type="radio" name="csontritkulas" value="nem">
+                                Nem</label><label><input type="radio" name="csontritkulas" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Infarktus, stroke:</label>
+                        <div class="options"><label><input type="radio" name="infarktus_stroke" value="nem">
+                                Nem</label><label><input type="radio" name="infarktus_stroke" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Daganatos betegségek:</label>
+                        <div class="options"><label><input type="radio" name="daganatos_betegseg" value="nem">
+                                Nem</label><label><input type="radio" name="daganatos_betegseg" value="igen">
+                                Igen</label></div>
+                    </div>
+                    <div class="question"><label>Menstruáció első napjai:</label>
+                        <div class="options"><label><input type="radio" name="menstruacio" value="nem">
+                                Nem</label><label><input type="radio" name="menstruacio" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="question"><label>Friss traumatikus sérülések:</label>
+                        <div class="options"><label><input type="radio" name="serules" value="nem">
+                                Nem</label><label><input type="radio" name="serules" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Epilepszia:</label>
+                        <div class="options"><label><input type="radio" name="epilepszia" value="nem">
+                                Nem</label><label><input type="radio" name="epilepszia" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Allergia (masszázsolajokra/krémekre):</label>
+                        <div class="options"><label><input type="radio" name="allergia" value="nem">
+                                Nem</label><label><input type="radio" name="allergia" value="igen"> Igen</label></div>
+                    </div>
+                    <div class="question"><label>Alkohol/bódítószer hatása alatt:</label>
+                        <div class="options"><label><input type="radio" name="alkohol_boditoszer" value="nem">
+                                Nem</label><label><input type="radio" name="alkohol_boditoszer" value="igen">
+                                Igen</label></div>
+                    </div>
+                    <div class="question"><label>Instabil pszichés állapot:</label>
+                        <div class="options"><label><input type="radio" name="psziches_allapot" value="nem">
+                                Nem</label><label><input type="radio" name="psziches_allapot" value="igen"> Igen</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="save-btn">Mentés</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        const box = document.getElementById('box');
+        const diameterSlider = document.getElementById('diameterSlider');
+        const diameterValue = document.getElementById('diameterValue');
+        const previewDisk = document.getElementById('previewDisk');
+
+        let diskDiameter = parseInt(diameterSlider.value);
+
+        diameterSlider.addEventListener('input', function () {
+            diskDiameter = parseInt(diameterSlider.value);
+            diameterValue.textContent = `${diskDiameter}px`;
+            previewDisk.style.width = `${diskDiameter}px`;
+            previewDisk.style.height = `${diskDiameter}px`;
+        });
+
+        box.addEventListener('click', function (event) {
+            if (event.target.classList.contains('disk')) {
+                event.target.remove();
+            } else {
+                const rect = box.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                const disk = document.createElement('div');
+                disk.classList.add('disk');
+                disk.style.width = `${diskDiameter}px`;
+                disk.style.height = `${diskDiameter}px`;
+                disk.style.left = `${x}px`;
+                disk.style.top = `${y}px`;
+
+                box.appendChild(disk);
+            }
+        });
+
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            html2canvas(box).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'sérülés.png';
+                link.click();
+            });
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function () {
+            const disks = box.querySelectorAll('.disk');
+            disks.forEach(disk => disk.remove());
+        });
+    </script>
+</body>
+
+</html>

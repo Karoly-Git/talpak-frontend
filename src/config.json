@@ -1,0 +1,10 @@
+{
+    "settings": {
+        "isLocalServer": false,
+        "isMaintenance": false
+    },
+    "urls": {
+        "local": "http://localhost:8000",
+        "heroku": "https://talpak-31282c65b13d.herokuapp.com"
+    }
+}

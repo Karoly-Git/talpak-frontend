@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Üzenetek</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Unified Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .brand {
+            font-size: 22px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            color: #3b82f6;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .sidebar nav ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: 18px;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            overflow-y: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+        }
+
+        .chat-window {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 600px;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 16px;
+            line-height: 1.4;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.sent {
+            background-color: #3b82f6;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .message.received {
+            background-color: #e5e7eb;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+
+        .message .date {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        .input-area {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            width: 600px;
+        }
+
+        .input-area input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-area button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-area button:hover {
+            background-color: #2563eb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 class="brand">Üdvözöljük Károly!</h2>
+            <h3>Profil</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/felhasznaloi-adatok.html">Felhasználói adatok</a>
+                    </li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/beallitasok.html">Beállítások</a></li>
+                </ul>
+            </nav>
+
+            <h3>Számlázás</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/szamlazas.html">Számlázási adatok</a></li>
+                </ul>
+            </nav>
+
+            <h3>Űrlapok</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-1.html">Űrlap-1</a></li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-2.html">Űrlap-2</a></li>
+                </ul>
+            </nav>
+
+            <h3>Kapcsolat</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/uzenetek.html">Üzenetek</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Üzenetek</h1>
+                <a href="https://karolyhornyak.co.uk/talpak/belepes.html" class="logout-btn">Kijelentkezés</a>
+            </header>
+
+            <!-- Chat Window -->
+            <div class="chat-window">
+                <div class="messages">
+                    <div class="message received">
+                        <p>Ez egy üzenet tartalma, amely fontos információkat tartalmaz.</p>
+                        <span class="date">2024-10-27</span>
+                    </div>
+                    <div class="message sent">
+                        <p>Köszönöm az információt! </p>
+                        <span class="date">2024-10-27</span>
+                    </div>
+                    <!-- Additional messages can be added here -->
+                </div>
+
+                <!-- Input area for new message -->
+                <div class="input-area">
+                    <input type="text" placeholder="Írj egy üzenetet..." />
+                    <button>Küldés</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

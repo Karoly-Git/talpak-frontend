@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Űrlap-1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Unified Styles */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .brand {
+            font-size: 22px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            color: #3b82f6;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .sidebar nav ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: 18px;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #box {
+            width: 912px;
+            height: 591px;
+            border: 3px solid #333;
+            position: relative;
+            margin: 20px auto;
+            background-image: url("./body.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .disk {
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            min-width: 600px;
+            min-height: 82px;
+            gap: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .controls button {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+
+        #previewDisk {
+            display: inline-block;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 class="brand">Üdvözöljük Károly!</h2>
+            <h3>Profil</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/felhasznaloi-adatok.html">Felhasználói adatok</a>
+                    </li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/beallitasok.html">Beállítások</a></li>
+                </ul>
+            </nav>
+
+            <h3>Számlázás</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/szamlazas.html">Számlázási adatok</a></li>
+                </ul>
+            </nav>
+
+            <h3>Űrlapok</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-1.html">Űrlap-1</a></li>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/urlap-2.html">Űrlap-2</a></li>
+                </ul>
+            </nav>
+
+            <h3>Kapcsolat</h3>
+            <nav>
+                <ul>
+                    <li><a href="https://karolyhornyak.co.uk/talpak/uzenetek.html">Üzenetek</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Űrlap-1</h1>
+                <a style="text-decoration: none;" href="https://karolyhornyak.co.uk/talpak/belepes.html"
+                    class="logout-btn">Kijelentkezés</a>
+            </header>
+
+            <!-- Integration of Doc-1 -->
+            <section class="card">
+                <h2>Kattints a korongok elhelyezéséhez és eltávolításához</h2>
+                <div id="box"></div>
+
+                <div class="controls">
+                    <button id="saveBtn">Mentés képként</button>
+                    <button id="resetBtn">Visszaállít</button>
+                    <label>
+                        Méret:
+                        <input type="range" id="diameterSlider" min="10" max="50" value="20">
+                    </label>
+                    <span id="diameterValue">20px</span>
+                    <div id="previewDisk" style="width: 20px; height: 20px;"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        const box = document.getElementById('box');
+        const diameterSlider = document.getElementById('diameterSlider');
+        const diameterValue = document.getElementById('diameterValue');
+        const previewDisk = document.getElementById('previewDisk');
+
+        let diskDiameter = parseInt(diameterSlider.value);
+
+        diameterSlider.addEventListener('input', function () {
+            diskDiameter = parseInt(diameterSlider.value);
+            diameterValue.textContent = `${diskDiameter}px`;
+            previewDisk.style.width = `${diskDiameter}px`;
+            previewDisk.style.height = `${diskDiameter}px`;
+        });
+
+        box.addEventListener('click', function (event) {
+            if (event.target.classList.contains('disk')) {
+                event.target.remove();
+            } else {
+                const rect = box.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                const disk = document.createElement('div');
+                disk.classList.add('disk');
+                disk.style.width = `${diskDiameter}px`;
+                disk.style.height = `${diskDiameter}px`;
+                disk.style.left = `${x}px`;
+                disk.style.top = `${y}px`;
+
+                box.appendChild(disk);
+            }
+        });
+
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            html2canvas(box).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'sérülés.png';
+                link.click();
+            });
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function () {
+            const disks = box.querySelectorAll('.disk');
+            disks.forEach(disk => disk.remove());
+        });
+    </script>
+</body>
+
+</html>

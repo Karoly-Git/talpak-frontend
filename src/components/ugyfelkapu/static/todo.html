@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        /* Container */
+        .todo-container {
+            background-color: #fff;
+            width: 350px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .todo-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Input and Button */
+        .todo-input,
+        .assignee-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .todo-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .todo-btn:hover {
+            background-color: #218838;
+        }
+
+        /* List items */
+        .todo-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .todo-item {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+        }
+
+        .task-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-text {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .task-text.done {
+            text-decoration: line-through;
+            color: #777;
+        }
+
+        .assignee {
+            color: #555;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .action-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .done-btn {
+            background-color: #28a745;
+        }
+
+        .done-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        <input type="text" class="todo-input" id="todoInput" placeholder="Enter a new task...">
+        <select class="assignee-select" id="assigneeSelect">
+            <option value="Karoly">Karoly</option>
+            <option value="Anett">Anett</option>
+        </select>
+        <button class="todo-btn" onclick="addTask()">Add Task</button>
+        <ul class="todo-list" id="todoList"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("todoInput");
+            const assigneeSelect = document.getElementById("assigneeSelect");
+            const taskText = taskInput.value.trim();
+            const assigneeName = assigneeSelect.value;
+
+            if (taskText === "") return;
+
+            const list = document.getElementById("todoList");
+            const listItem = document.createElement("li");
+            listItem.className = "todo-item";
+
+            const taskDetailsDiv = document.createElement("div");
+            taskDetailsDiv.className = "task-details";
+
+            const taskSpan = document.createElement("span");
+            taskSpan.className = "task-text";
+            taskSpan.textContent = taskText;
+
+            const assigneeSpan = document.createElement("span");
+            assigneeSpan.className = "assignee";
+            assigneeSpan.textContent = `Assigned to: ${assigneeName}`;
+
+            const createdTimestamp = document.createElement("div");
+            createdTimestamp.className = "timestamp";
+            const createdDate = new Date();
+            createdTimestamp.textContent = `Created: ${createdDate.toLocaleString()}`;
+
+            const doneTimestamp = document.createElement("div");
+            doneTimestamp.className = "timestamp";
+
+            const doneButton = document.createElement("button");
+            doneButton.className = "action-btn done-btn";
+            doneButton.textContent = "Mark as Done";
+            doneButton.onclick = () => markAsDone(taskSpan, doneTimestamp);
+
+            const editButton = document.createElement("button");
+            editButton.className = "action-btn";
+            editButton.textContent = "Edit";
+            editButton.onclick = () => editTask(taskSpan, assigneeSpan);
+
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "action-btn delete-btn";
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = () => listItem.remove();
+
+            taskDetailsDiv.appendChild(taskSpan);
+            taskDetailsDiv.appendChild(doneButton);
+            taskDetailsDiv.appendChild(editButton);
+            taskDetailsDiv.appendChild(deleteButton);
+
+            listItem.appendChild(taskDetailsDiv);
+            listItem.appendChild(assigneeSpan);
+            listItem.appendChild(createdTimestamp);
+            listItem.appendChild(doneTimestamp);
+            list.appendChild(listItem);
+
+            taskInput.value = "";
+        }
+
+        function editTask(taskSpan, assigneeSpan) {
+            const newTaskText = prompt("Edit task:", taskSpan.textContent);
+            const newAssigneeName = prompt("Edit assignee:", assigneeSpan.textContent.replace("Assigned to: ", ""));
+
+            if (newTaskText && newTaskText.trim() !== "") {
+                taskSpan.textContent = newTaskText.trim();
+            }
+            if (newAssigneeName && newAssigneeName.trim() !== "") {
+                assigneeSpan.textContent = `Assigned to: ${newAssigneeName.trim()}`;
+            }
+        }
+
+        function markAsDone(taskSpan, doneTimestamp) {
+            taskSpan.classList.toggle("done");
+
+            if (taskSpan.classList.contains("done")) {
+                const completedDate = new Date();
+                doneTimestamp.textContent = `Completed: ${completedDate.toLocaleString()}`;
+            } else {
+                doneTimestamp.textContent = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

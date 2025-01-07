@@ -74,13 +74,13 @@ export default function Arak() {
                         <m.p {...animations.page.p}>
                             Ha további részleteket szeretnél megtudni
                             az egyes szolgáltatásokról vagy konkrét árajánlatot kérni,
-                            kérlek, vedd fel a kapcsolatot velem.
+                            kérlek, vedd fel velem a kapcsolatot.
                         </m.p>
                     </m.div>
                 }
             />
 
-            {<Section
+            {false && <Section
                 top
                 color
                 content={

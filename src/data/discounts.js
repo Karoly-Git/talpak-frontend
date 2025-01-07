@@ -120,7 +120,7 @@ export const discounts = [
         year: 2025,
         month: 1,
         element: <>
-            <h2>Vizes Lábmasszázs Akció</h2>
+            <h2>Paraffinos Lábápolás Akció</h2>
             <p>50%-os kedvezmény egész hónapban!</p>
         </>
     },
@@ -192,7 +192,7 @@ export const discounts = [
         year: 2025,
         month: 10,
         element: <>
-            <h2>Teljes Testmasszázs Akció</h2>
+            <h2>Thermo Masszázs Akció</h2>
             <p>10%-os kedvezmény egész hónapban!</p>
         </>
     },

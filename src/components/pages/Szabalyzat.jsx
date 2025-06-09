@@ -6,9 +6,9 @@ import { Section } from '../Sections';
 import { motion as m } from 'framer-motion';
 import { animations } from '../../data/framer-animations';
 
-import szab_01 from "../../img/szabalyzat/szab_01.jfif";
-import szab_02 from "../../img/szabalyzat/szab_02.jfif";
-import szab_03 from "../../img/szabalyzat/szab_03.jfif";
+import szab_01 from "../../img/szabalyzat/p1.png";
+import szab_02 from "../../img/szabalyzat/p2.png";
+import szab_03 from "../../img/szabalyzat/p3.png";
 
 export default function Hazirend() {
 

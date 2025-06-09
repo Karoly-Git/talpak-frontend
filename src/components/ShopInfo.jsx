@@ -10,11 +10,11 @@ export function Bejelentkezes() {
                 rel="noopener noreferrer">
                 {contacts.tel.text}
             </a>
-            <a
+            {false && <a
                 href={contacts.email.link}
                 rel="noopener noreferrer">
                 {contacts.email.text}
-            </a>
+            </a>}
         </div>
     )
 }

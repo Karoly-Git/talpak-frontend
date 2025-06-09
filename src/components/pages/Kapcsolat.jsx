@@ -179,7 +179,7 @@ export default function Kapcsolat(props) {
                                     <h3 className='hover-color-swap'>{contacts.whatsapp.text}</h3>
                                 </a>
                             </li>
-                            <li id="email">
+                            {false && <li id="email">
                                 <h2>Email:</h2>
                                 <a
                                     className='hover-color-swap'
@@ -187,7 +187,7 @@ export default function Kapcsolat(props) {
                                     rel="noopener noreferrer">
                                     {contacts.email.text}
                                 </a>
-                            </li>
+                            </li>}
                             <li id="location">
                                 <h2>Cím</h2>
                                 <a

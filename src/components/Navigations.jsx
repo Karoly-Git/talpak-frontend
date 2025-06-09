@@ -270,7 +270,7 @@ export function BottomNavigation(props) {
                     <h3>Kapcsolat</h3>
                     <p>Vedd fel a kapcsolatot elérhetősgeim bármelyikén.</p>
                     <Links
-                        links={['tel', 'email', 'address', 'whatsapp']}
+                        links={['tel', 'address', 'whatsapp']}
                     />
                 </li>
                 <li className='item subscribe-item'>

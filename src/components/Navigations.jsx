@@ -28,7 +28,7 @@ const mainMenuIitems = [
     { name: 'Árak', to: '/arak', isDisplayed: true },
     { name: 'Magamról', to: '/magamrol', isDisplayed: true },
     { name: 'Kapcsolat', to: '/kapcsolat', isDisplayed: true },
-    { name: 'Galéria', to: '/galeria', isDisplayed: true },
+    { name: 'Galéria', to: '/galeria', isDisplayed: false },
 ]
 
 const secMenuIitems = [

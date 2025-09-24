@@ -182,7 +182,7 @@ export default function App() {
               anyFormTriggered={anyFormTriggered}
               setAnyFormTriggered={setAnyFormTriggered}
             />} />
-            <Route path='/galeria' element={<Galeria />} />
+            {false && <Route path='/galeria' element={<Galeria />} />}
 
             <Route path='/felhasznalasi-feltetelek' element={<FelhasznalasiFeltetelek />} />
 

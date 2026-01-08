@@ -8,6 +8,8 @@ export default function Discount() {
     const date = newDate.getDate();
     let element = <></>;
 
+    console.log(year, month, date);
+
     if (month === 3 && date === 8) {
         element = discounts.filter(e => e.year === year && e.month === 'nonap')[0].element;
     } if (month === 12 && date === 6) {

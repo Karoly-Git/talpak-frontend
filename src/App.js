@@ -34,14 +34,14 @@ import FelhasznalasiFeltetelek from './components/pages/FelhasznalasiFeltetelek'
 // Other Component Imports
 import ScrollToTop from './components/ScrollToTop';
 import Developer from './components/Developer';
-import Discount from './components/Discount';
+// import Discount from './components/Discount';
 
 import Belepes from './components/ugyfelkapu/Belepes';
 import Regisztracio from './components/ugyfelkapu/Regisztracio';
 
 export default function App() {
   const [isStatusBoxOpen, setIsStatusBoxOpen] = useState(false);
-  const [isDiscountBoxOpen, setIsDiscountBoxOpen] = useState(true);  // This to be set true for pop-up add
+  // const [isDiscountBoxOpen, setIsDiscountBoxOpen] = useState(true);  // This to be set true for pop-up add
   const [subscribtionInProgress, setSubscribtionInProgress] = useState(false);
   const [isSubscribtionError, setIsSubscribtionError] = useState(false);
   const [isFormReset, setIsFormReset] = useState(false);
@@ -69,16 +69,16 @@ export default function App() {
   function closeStatusBox() {
     setIsStatusBoxOpen(false);
   }
-  function closeDiscountBox() {
-    setIsDiscountBoxOpen(false);
-  }
+  //function closeDiscountBox() {
+  //  setIsDiscountBoxOpen(false);
+  //}
 
   return (
     <Router>
       <ScrollToTop />
       <div className='App'>
 
-        {isDiscountBoxOpen &&
+        {/*isDiscountBoxOpen &&
           <m.div className='status-box' id='discount'
             initial={{ opacity: 0, top: 200 }}
             animate={{ opacity: 1, top: 350 }}
@@ -96,7 +96,7 @@ export default function App() {
               <button>Kapcsolat</button>
             </Link>
           </m.div>
-        }
+        */}
 
         {isStatusBoxOpen && subscribtionInProgress &&
           <div className='status-box' id='in-progress'>
